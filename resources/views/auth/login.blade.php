@@ -1,44 +1,99 @@
 <x-guest-layout>
-    <div class="mx-auto max-w-md">
+    <div class="mx-auto w-full max-w-md">
+        
+        {{-- Header --}}
         <div class="mb-8">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e8f7ef] text-[#08A05A]"><i class="fa-solid fa-lock text-lg"></i></div>
-            <p class="mt-6 text-xs font-black uppercase tracking-[0.3em] text-[#08A05A]">Member access</p>
-            <h2 class="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">Welcome back</h2>
-            <p class="mt-3 text-sm leading-7 text-slate-500">Sign in to continue managing your ITPVA marketplace journey.</p>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 shadow-sm">
+                <i class="fa-solid fa-lock text-base"></i>
+            </div>
+            <p class="mt-4 font-mono text-xs font-bold uppercase tracking-wider text-emerald-400">AUTHENTICATION REQUIRED</p>
+            <h2 class="mt-1 text-2xl sm:text-3xl font-black tracking-tight text-white">Sign in to your account</h2>
+            <p class="mt-1.5 text-sm leading-relaxed text-slate-400">Enter your credentials to access your ITPVA dashboard and manage orders.</p>
         </div>
 
-        <x-auth-session-status class="mb-5" :status="session('status')" />
+        <x-auth-session-status class="mb-5 rounded-xl border border-emerald-500/30 bg-emerald-950/50 p-3 text-xs font-semibold text-emerald-300" :status="session('status')" />
 
         <form method="POST" action="{{ route('login') }}" class="space-y-5">
             @csrf
 
+            {{-- Email Input --}}
             <div>
-                <label for="email" class="text-sm font-bold text-slate-700">Email address</label>
+                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-300">Email Address</label>
                 <div class="relative mt-2">
-                    <i class="fa-solid fa-envelope pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                    <input id="email" name="email" type="email" value="{{ old('email') }}" required autofocus autocomplete="username" placeholder="you@example.com" class="block w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#08A05A] focus:bg-white focus:ring-4 focus:ring-[#08A05A]/10">
+                    <i class="fa-solid fa-envelope pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-slate-500"></i>
+                    <input id="email" 
+                           name="email" 
+                           type="email" 
+                           value="{{ old('email') }}" 
+                           required 
+                           autofocus 
+                           autocomplete="username" 
+                           placeholder="name@company.com" 
+                           class="block w-full rounded-xl border border-slate-700 bg-slate-950/80 py-3.5 pl-11 pr-4 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-emerald-500 focus:bg-slate-950 focus:ring-2 focus:ring-emerald-500/30">
                 </div>
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <x-input-error :messages="$errors->get('email')" class="mt-2 text-xs font-semibold text-rose-400" />
             </div>
 
-            <div>
-                <div class="flex items-center justify-between gap-3"><label for="password" class="text-sm font-bold text-slate-700">Password</label>@if (Route::has('password.request'))<a href="{{ route('password.request') }}" class="text-xs font-bold text-[#08A05A] hover:text-[#067a45]">Forgot password?</a>@endif</div>
-                <div class="relative mt-2">
-                    <i class="fa-solid fa-key pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                    <input id="password" name="password" type="password" required autocomplete="current-password" placeholder="Enter your password" class="block w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#08A05A] focus:bg-white focus:ring-4 focus:ring-[#08A05A]/10">
+            {{-- Password Input with Show/Hide Toggle --}}
+            <div x-data="{ show: false }">
+                <div class="flex items-center justify-between">
+                    <label for="password" class="block text-xs font-bold uppercase tracking-wider text-slate-300">Password</label>
+                    @if (Route::has('password.request'))
+                        <a href="{{ route('password.request') }}" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 hover:underline transition">
+                            Forgot password?
+                        </a>
+                    @endif
                 </div>
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                <div class="relative mt-2">
+                    <i class="fa-solid fa-key pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-slate-500"></i>
+                    <input id="password" 
+                           name="password" 
+                           :type="show ? 'text' : 'password'" 
+                           required 
+                           autocomplete="current-password" 
+                           placeholder="••••••••••••" 
+                           class="block w-full rounded-xl border border-slate-700 bg-slate-950/80 py-3.5 pl-11 pr-11 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-emerald-500 focus:bg-slate-950 focus:ring-2 focus:ring-emerald-500/30">
+                    <button type="button" 
+                            @click="show = !show" 
+                            class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 transition p-1"
+                            title="Toggle password visibility">
+                        <i class="fa-solid" :class="show ? 'fa-eye-slash' : 'fa-eye'"></i>
+                    </button>
+                </div>
+                <x-input-error :messages="$errors->get('password')" class="mt-2 text-xs font-semibold text-rose-400" />
             </div>
 
-            <label for="remember_me" class="flex cursor-pointer items-center gap-3 text-sm text-slate-500">
-                <input id="remember_me" name="remember" type="checkbox" class="h-4 w-4 rounded border-slate-300 text-[#08A05A] shadow-sm focus:ring-[#08A05A]">
-                <span>Keep me signed in</span>
-            </label>
+            {{-- Remember Me Checkbox --}}
+            <div class="flex items-center justify-between">
+                <label for="remember_me" class="flex cursor-pointer items-center gap-3 text-sm text-slate-400 hover:text-slate-300">
+                    <input id="remember_me" 
+                           name="remember" 
+                           type="checkbox" 
+                           class="h-4 w-4 rounded border-slate-700 bg-slate-950 text-emerald-600 focus:ring-emerald-500/30">
+                    <span>Remember this session</span>
+                </label>
+            </div>
 
-            <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-xl bg-[#08A05A] px-5 py-3.5 text-sm font-black text-white shadow-lg shadow-[#08A05A]/20 transition hover:bg-[#067a45] focus:outline-none focus:ring-4 focus:ring-[#08A05A]/20">Sign in <i class="fa-solid fa-arrow-right text-xs"></i></button>
+            {{-- Submit Button --}}
+            <button type="submit" 
+                    class="group flex w-full items-center justify-center gap-2.5 rounded-xl bg-emerald-600 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-900/40 transition hover:bg-emerald-500 hover:shadow-emerald-500/30 focus:outline-none focus:ring-4 focus:ring-emerald-500/20">
+                <span>Sign in to Control Center</span>
+                <i class="fa-solid fa-arrow-right text-xs transition group-hover:translate-x-1"></i>
+            </button>
         </form>
 
-        <div class="my-8 flex items-center gap-4"><div class="h-px flex-1 bg-slate-200"></div><span class="text-xs font-semibold uppercase tracking-widest text-slate-400">or</span><div class="h-px flex-1 bg-slate-200"></div></div>
-        <p class="text-center text-sm text-slate-500">New to ITPVA? <a href="{{ route('register') }}" class="font-black text-[#08A05A] hover:text-[#067a45]">Create an account</a></p>
+        {{-- Switch to Register --}}
+        <div class="my-6 flex items-center gap-4">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <span class="font-mono text-xs font-semibold uppercase tracking-widest text-slate-500">NEW TO ITPVA?</span>
+            <div class="h-px flex-1 bg-slate-800"></div>
+        </div>
+
+        <a href="{{ route('register') }}" 
+           class="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-950/60 px-5 py-3.5 text-sm font-bold text-slate-200 transition hover:border-slate-600 hover:bg-slate-800 hover:text-white">
+            <i class="fa-solid fa-user-plus text-xs text-emerald-400"></i>
+            <span>Create New Account</span>
+        </a>
+
     </div>
 </x-guest-layout>

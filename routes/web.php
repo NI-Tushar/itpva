@@ -42,6 +42,12 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/email/gmail', 'gmail')->name('email.gmail');
     Route::get('/email/buy-gmail-accounts', 'buyGmailAccounts')->name('email.buy-gmail-accounts');
     Route::get('/email/buy-gmail-aged-accounts', 'buyGmailAgedAccounts')->name('email.buy-gmail-aged-accounts');
+    Route::get('/email/edumail', 'edumail')->name('email.edumail');
+    Route::get('/email/code-mail', 'codeMail')->name('email.code-mail');
+    Route::get('/email/gmx', 'gmx')->name('email.gmx');
+    Route::get('/email/mail-com', 'mailCom')->name('email.mail-com');
+    Route::get('/email/hotmail-oauth2', 'hotmailOauth2')->name('email.hotmail-oauth2');
+    Route::get('/email/gmail-domain-rent', 'gmailDomainRent')->name('email.gmail-domain-rent');
 
     Route::get('/google-voice', 'googleVoice')->name('google-voice');
     Route::get('/google-voice/buy-google-voice-accounts', 'buyGoogleVoiceAccounts')->name('google-voice.buy-google-voice-accounts');
@@ -52,10 +58,13 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/social-media', 'socialMedia')->name('social-media');
     Route::get('/social-media/facebook-accounts', 'facebookAccounts')->name('social-media.facebook-accounts');
     Route::get('/social-media/instagram-accounts', 'instagramAccounts')->name('social-media.instagram-accounts');
+    Route::get('/social-media/instagram-clone', 'instagramClone')->name('social-media.instagram-clone');
+    Route::get('/social-media/tiktok-accounts', 'tiktokAccounts')->name('social-media.tiktok-accounts');
     Route::get('/social-media/twitter-accounts', 'twitterAccounts')->name('social-media.twitter-accounts');
     Route::get('/social-media/youtube-accounts', 'youtubeAccounts')->name('social-media.youtube-accounts');
 
     Route::get('/more', 'more')->name('more');
+    Route::get('/more/nextdoor', 'nextdoor')->name('more.nextdoor');
     Route::get('/more/linked-in', 'linkedIn')->name('more.linked-in');
     Route::get('/more/hotmail', 'hotmail')->name('more.hotmail');
     Route::get('/more/raddit', 'raddit')->name('more.raddit');

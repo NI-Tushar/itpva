@@ -1,27 +1,31 @@
 @extends('layouts.app')
 
-@section('title', 'Social Media')
+@section('title', 'Social Media Accounts - Verified Profiles & Advertising Infrastructure')
 
 @section('app-content')
     @include('pages.partials.catalog-page', [
         'eyebrow' => 'Social Media',
-        'title' => 'A central social media category page for account-based platform offers.',
-        'description' => 'This overview page introduces your social account services and directs users into Facebook, Instagram, Twitter, and Youtube product pages from one place.',
+        'title' => 'Social Media Accounts & Global Advertising Infrastructure',
+        'description' => 'Scale your viral marketing, automated engagement, influencer DM campaigns, and media buying pipelines. We provision aged and phone-verified accounts across Facebook, Instagram, TikTok Ads Manager, Twitter/X, and YouTube Channels with 2FA protection.',
         'highlights' => [
-            ['title' => 'Organized category hub', 'text' => 'Keep all major social account offerings grouped under a single navigation family.'],
-            ['title' => 'Platform-specific pages', 'text' => 'Each major platform now has a separate route and view for tailored messaging.'],
-            ['title' => 'Scalable design system', 'text' => 'You can later add more platforms without rebuilding the page structure.'],
+            'Pristine Residential Farm History: Created and farmed using dedicated static residential IPs to bypass platform shadowbans.',
+            'Two-Factor Authentication (2FA) Armed: 16-digit secret keys provided for instant, checkpoint-free authentication.',
+            'Ad Account & Agency Ready: Postpaid TikTok Ads accounts and seasoned Facebook profiles configured for ads manager linking.',
+            'Instant Automated Delivery: Credentials dispatched immediately in structured format with recovery mail and session cookies.'
         ],
         'stats' => [
-            ['value' => '4', 'label' => 'Platform Pages', 'text' => 'Facebook, Instagram, Twitter, and Youtube are already connected.'],
-            ['value' => 'Unified', 'label' => 'User Flow', 'text' => 'Users can browse a category before jumping into a specific platform.'],
-            ['value' => 'Tailwind', 'label' => 'Visual System', 'text' => 'All pages inherit the same responsive styling foundation.'],
+            ['label' => 'Supported Platforms', 'value' => '6 Major Socials'],
+            ['label' => 'Security Level', 'value' => '2FA Keys + Backup Codes'],
+            ['label' => 'Account Tenure', 'value' => 'Fresh to 10+ Years Aged'],
+            ['label' => 'Replacement SLA', 'value' => '48h Login Guarantee'],
         ],
         'cards' => [
-            ['icon' => 'fa-brands fa-facebook-f', 'title' => 'Facebook Accounts', 'text' => 'Use for page growth, ad-ready accounts, or marketplace listings.'],
-            ['icon' => 'fa-brands fa-instagram', 'title' => 'Instagram Accounts', 'text' => 'Showcase niche-based or engagement-ready Instagram stock.'],
-            ['icon' => 'fa-brands fa-x-twitter', 'title' => 'Twitter Accounts', 'text' => 'Explain account characteristics and delivery process clearly.'],
-            ['icon' => 'fa-brands fa-youtube', 'title' => 'Youtube Accounts', 'text' => 'Present channel or account-related offerings with clearer categorization.'],
+            ['icon' => 'fa-brands fa-facebook-f', 'title' => 'Facebook Accounts', 'text' => 'Aged Facebook profiles with friends network, 2FA keys, and active Marketplace access.'],
+            ['icon' => 'fa-brands fa-instagram', 'title' => 'Instagram Accounts', 'text' => 'Phone and email-verified Instagram PVA accounts for influencer growth and DM outreach.'],
+            ['icon' => 'fa-solid fa-clone', 'title' => 'Instagram Clone PVA', 'text' => '1-30 days aged Instagram accounts with 2FA secret keys and realistic bio profiles.'],
+            ['icon' => 'fa-brands fa-tiktok', 'title' => 'TikTok Ads Accounts', 'text' => 'Postpaid and agency TikTok Ads Manager accounts in USD/VND with 2FA security.'],
+            ['icon' => 'fa-brands fa-x-twitter', 'title' => 'Twitter Accounts', 'text' => 'Aged Twitter/X accounts with auth tokens and 2FA keys for automation bots and Web3.'],
+            ['icon' => 'fa-brands fa-youtube', 'title' => 'Youtube Accounts', 'text' => 'Phone-verified YouTube channels with Level 2 verification and custom thumbnails unlocked.'],
         ],
     ])
 @endsection

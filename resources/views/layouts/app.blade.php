@@ -27,6 +27,31 @@
         [class*="focus:ring-sky-"]:focus, [class*="focus:ring-emerald-"]:focus, [class*="focus:ring-indigo-"]:focus { --tw-ring-color: var(--site-primary) !important; }
         header nav a:hover, header [x-show="mobileOpen"] a:hover { color: #000 !important; }
         header nav a[class~="text-sky-700"], header nav a[class~="text-sky-700"]:hover, header [x-show="mobileOpen"] a[class~="text-sky-700"], header [x-show="mobileOpen"] a[class~="text-sky-700"]:hover { color: var(--site-primary) !important; }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(12px); }
+        }
+        @keyframes floatSubtle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+        .animate-float-slow {
+            animation: floatSlow 7s ease-in-out infinite;
+        }
+        .animate-float-reverse {
+            animation: floatReverse 5s ease-in-out infinite;
+        }
+        .animate-float-subtle {
+            animation: floatSubtle 6s ease-in-out infinite;
+        }
     </style>
     @stack('css')
 </head>
@@ -38,19 +63,27 @@
                 'type' => 'dropdown',
                 'label' => 'Email',
                 'route' => 'email',
+                'badge' => '9 Services',
                 'items' => [
-                    ['label' => 'Gmail', 'route' => 'email.gmail'],
-                    ['label' => 'Buy Gmail Accounts', 'route' => 'email.buy-gmail-accounts'],
-                    ['label' => 'Buy Gmail Aged Accounts', 'route' => 'email.buy-gmail-aged-accounts'],
+                    ['label' => 'Gmail', 'route' => 'email.gmail', 'image' => asset('images/products/gmail.png'), 'sub' => 'Fresh & Aged Workspaces'],
+                    ['label' => 'Buy Gmail Accounts', 'route' => 'email.buy-gmail-accounts', 'image' => asset('images/products/gmail.png'), 'sub' => 'Verified Bulk Accounts'],
+                    ['label' => 'Buy Gmail Aged Accounts', 'route' => 'email.buy-gmail-aged-accounts', 'image' => asset('images/products/aged-gmail.png'), 'sub' => '2014-2023 Vintage'],
+                    ['label' => 'Edu Mail Accounts', 'route' => 'email.edumail', 'image' => asset('images/products/edumail.png'), 'sub' => 'Student Perks & Discounts'],
+                    ['label' => 'Old Code Mail', 'route' => 'email.code-mail', 'image' => asset('images/products/review_mail.png'), 'sub' => 'Instant OTP Recovery'],
+                    ['label' => 'GMX Mail', 'route' => 'email.gmx', 'image' => asset('images/products/gmx.png'), 'sub' => 'POP3/IMAP/SMTP Active'],
+                    ['label' => 'Mail.com Accounts', 'route' => 'email.mail-com', 'image' => asset('images/products/mailcom.png'), 'sub' => 'Fresh & 1M+ Aged Webmail'],
+                    ['label' => 'Hotmail OAuth2', 'route' => 'email.hotmail-oauth2', 'image' => asset('images/products/outlook.png'), 'sub' => 'Microsoft Graph & IMAP'],
+                    ['label' => 'Gmail Domain Rent', 'route' => 'email.gmail-domain-rent', 'image' => asset('images/products/gmail-domain-rent.png'), 'sub' => '2h to 48h Private Slots'],
                 ],
             ],
             [
                 'type' => 'dropdown',
                 'label' => 'Google Voice',
                 'route' => 'google-voice',
+                'badge' => '2 Services',
                 'items' => [
-                    ['label' => 'Buy Google Voice Accounts', 'route' => 'google-voice.buy-google-voice-accounts'],
-                    ['label' => 'AGED-Google Voice', 'route' => 'google-voice.aged-google-voice'],
+                    ['label' => 'Buy Google Voice', 'route' => 'google-voice.buy-google-voice-accounts', 'image' => asset('images/products/voice.png'), 'sub' => 'Fresh US Real Carrier PVA'],
+                    ['label' => 'AGED Google Voice', 'route' => 'google-voice.aged-google-voice', 'image' => asset('images/products/aged-voice.png'), 'sub' => 'Historical Call Logs Seasoned'],
                 ],
             ],
             ['type' => 'link', 'label' => 'Yahoo', 'route' => 'yahoo'],
@@ -58,29 +91,34 @@
                 'type' => 'dropdown',
                 'label' => 'Social Media',
                 'route' => 'social-media',
+                'badge' => '6 Platforms',
                 'items' => [
-                    ['label' => 'Facebook Accounts', 'route' => 'social-media.facebook-accounts'],
-                    ['label' => 'Instagram Accounts', 'route' => 'social-media.instagram-accounts'],
-                    ['label' => 'Twitter Accounts', 'route' => 'social-media.twitter-accounts'],
-                    ['label' => 'Youtube Accounts', 'route' => 'social-media.youtube-accounts'],
+                    ['label' => 'Facebook Accounts', 'route' => 'social-media.facebook-accounts', 'image' => asset('images/products/facebook.png'), 'sub' => 'Aged Profiles + 2FA Key'],
+                    ['label' => 'Instagram Accounts', 'route' => 'social-media.instagram-accounts', 'image' => asset('images/products/instagram.png'), 'sub' => 'Phone & Email Verified PVA'],
+                    ['label' => 'Instagram Clone PVA', 'route' => 'social-media.instagram-clone', 'image' => asset('images/products/instagram-clone.png'), 'sub' => '1-30 Days Aged with 2FA'],
+                    ['label' => 'TikTok Ads Accounts', 'route' => 'social-media.tiktok-accounts', 'image' => asset('images/products/tik-tok.png'), 'sub' => 'Postpaid USD/VND Agency'],
+                    ['label' => 'Twitter / X Accounts', 'route' => 'social-media.twitter-accounts', 'image' => asset('images/products/twitter.png'), 'sub' => 'API & Automation Tokens'],
+                    ['label' => 'YouTube Accounts', 'route' => 'social-media.youtube-accounts', 'image' => asset('images/products/youtube.png'), 'sub' => 'Verified Channels & Stream'],
                 ],
             ],
             [
                 'type' => 'dropdown',
                 'label' => 'More',
                 'route' => 'more',
+                'badge' => '12 Utilities',
                 'items' => [
-                    ['label' => 'Linked In', 'route' => 'more.linked-in'],
-                    ['label' => 'Hotmail', 'route' => 'more.hotmail'],
-                    ['label' => 'Raddit', 'route' => 'more.raddit'],
-                    ['label' => 'TextNow', 'route' => 'more.textnow'],
-                    ['label' => 'Digital Ocean', 'route' => 'more.digital-ocean'],
-                    ['label' => 'Google Cloud', 'route' => 'more.google-cloud'],
-                    ['label' => 'Amazon Web Services', 'route' => 'more.amazon-web-services'],
-                    ['label' => 'Azure Account', 'route' => 'more.azure-account'],
-                    ['label' => 'AOL Account', 'route' => 'more.aol-account'],
-                    ['label' => 'Domain GV', 'route' => 'more.domain-gv'],
-                    ['label' => 'Product Hunt', 'route' => 'more.product-hunt'],
+                    ['label' => 'Nextdoor Accounts', 'route' => 'more.nextdoor', 'image' => asset('images/products/nextdoor.png'), 'sub' => 'Local US/UK Postal PVA'],
+                    ['label' => 'LinkedIn Accounts', 'route' => 'more.linked-in', 'image' => asset('images/products/linkedin.png'), 'sub' => 'Sales Navigator & B2B'],
+                    ['label' => 'Hotmail / Outlook', 'route' => 'more.hotmail', 'image' => asset('images/products/hotmail.png'), 'sub' => 'Enterprise POP3/SMTP'],
+                    ['label' => 'Reddit Accounts', 'route' => 'more.raddit', 'image' => asset('images/products/raddit.png'), 'sub' => 'Aged Karma Profiles'],
+                    ['label' => 'TextNow Accounts', 'route' => 'more.textnow', 'image' => asset('images/products/textnow.jpg'), 'sub' => 'Active US SMS / Call Line'],
+                    ['label' => 'DigitalOcean', 'route' => 'more.digital-ocean', 'image' => asset('images/products/digitalocean.png'), 'sub' => '$200 Credits Cloud Console'],
+                    ['label' => 'Google Cloud (GCP)', 'route' => 'more.google-cloud', 'image' => asset('images/products/google-cloud.png'), 'sub' => '$300 Trial Compute Ready'],
+                    ['label' => 'Amazon Web Services', 'route' => 'more.amazon-web-services', 'image' => asset('images/products/aws.png'), 'sub' => 'EC2 / SES Quotas Open'],
+                    ['label' => 'Azure Account', 'route' => 'more.azure-account', 'image' => asset('images/products/azure.png'), 'sub' => 'Microsoft Azure $200 Tier'],
+                    ['label' => 'AOL Account', 'route' => 'more.aol-account', 'image' => asset('images/products/aol.png'), 'sub' => 'Seasoned Email PVA'],
+                    ['label' => 'Domain Google Voice', 'route' => 'more.domain-gv', 'image' => asset('images/products/domain-gv.png'), 'sub' => 'Enterprise Workspace VOIP'],
+                    ['label' => 'Product Hunt', 'route' => 'more.product-hunt', 'image' => asset('images/products/producthunt.png'), 'sub' => 'Maker Rank Upvote Profiles'],
                 ],
             ],
             ['type' => 'link', 'label' => 'About Us', 'route' => 'about-us'],
@@ -111,24 +149,84 @@
                                 {{ $section['label'] }}
                             </a>
                         @else
-                            <div x-data="{ open: false }" class="relative">
-                                <div class="flex items-center rounded-xl pr-2 transition hover:bg-sky-50" @mouseenter="open = true" @mouseleave="open = false">
+                            @php
+                                $itemCount = count($section['items']);
+                                $useMultiCol = $itemCount > 5;
+                                $dropdownWidth = $itemCount > 10 ? 'w-[780px]' : ($itemCount > 5 ? 'w-[540px]' : 'w-[320px]');
+                            @endphp
+                            <div x-data="{ open: false }" class="relative" @mouseenter="open = true" @mouseleave="open = false">
+                                <div class="flex items-center rounded-xl pr-2 transition hover:bg-sky-50">
                                     <a href="{{ route($section['route']) }}" class="whitespace-nowrap rounded-xl px-4 py-2 text-sm font-bold text-black transition hover:text-sky-700 {{ request()->routeIs($section['route']) || request()->routeIs($section['route'] . '.*') ? 'text-sky-700' : '' }}">
                                         {{ $section['label'] }}
                                     </a>
                                     <button type="button" @click="open = !open" class="rounded p-2 text-slate-400 transition hover:text-sky-700">
-                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                        <i class="fa-solid fa-chevron-down text-xs transition duration-200" :class="{ 'rotate-180': open }"></i>
                                     </button>
                                 </div>
-                                <div x-show="open" x-transition @mouseenter="open = true" @mouseleave="open = false" @click.outside="open = false" class="absolute left-0 top-full mt-3 w-72 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl shadow-slate-200/60" style="display: none;">
-                                    <a href="{{ route($section['route']) }}" class="mb-2 block whitespace-nowrap rounded-xl px-4 py-3 text-sm font-semibold text-black transition hover:bg-slate-50 hover:text-sky-700 {{ request()->routeIs($section['route']) ? 'bg-sky-50 text-sky-700' : 'bg-white' }}">
-                                        {{ $section['label'] }} Overview
-                                    </a>
-                                    @foreach ($section['items'] as $item)
-                                        <a href="{{ route($item['route']) }}" class="block whitespace-nowrap rounded-xl px-4 py-3 text-sm text-black transition hover:bg-slate-50 hover:text-sky-700 {{ request()->routeIs($item['route']) ? 'bg-sky-50 text-sky-700' : '' }}">
-                                            {{ $item['label'] }}
+
+                                {{-- Rich Mega Dropdown Menu (Flex Column / Grid) --}}
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-200"
+                                     x-transition:enter-start="opacity-0 translate-y-2 scale-98"
+                                     x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                                     x-transition:leave="transition ease-in duration-150"
+                                     x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                                     x-transition:leave-end="opacity-0 translate-y-2 scale-98"
+                                     @click.outside="open = false" 
+                                     class="absolute left-0 top-full mt-2 {{ $dropdownWidth }} rounded-3xl border border-slate-200/90 bg-white/95 p-4 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl ring-1 ring-slate-900/5 z-50" 
+                                     style="display: none;">
+                                    
+                                    {{-- Dropdown Header with Category Title & Overview Action --}}
+                                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 px-2 mb-3">
+                                        <div class="flex items-center gap-2">
+                                            <span class="flex h-6 w-6 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 text-xs">
+                                                <i class="fa-solid fa-layer-group"></i>
+                                            </span>
+                                            <span class="text-xs font-bold uppercase tracking-wider text-slate-900">{{ $section['label'] }} Marketplace</span>
+                                            @if (!empty($section['badge']))
+                                                <span class="rounded-full bg-emerald-100/80 px-2 py-0.5 text-[11px] font-bold text-emerald-800">{{ $section['badge'] }}</span>
+                                            @endif
+                                        </div>
+                                        <a href="{{ route($section['route']) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition">
+                                            <span>All {{ $section['label'] }}</span>
+                                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
                                         </a>
-                                    @endforeach
+                                    </div>
+
+                                    {{-- Flex / Grid Columns (Max 5 to 6 items per column) --}}
+                                    <div class="{{ $useMultiCol ? ($itemCount > 10 ? 'grid grid-cols-3 gap-2' : 'grid grid-cols-2 gap-2') : 'flex flex-col gap-1.5' }}">
+                                        @foreach ($section['items'] as $item)
+                                            <a href="{{ route($item['route']) }}" 
+                                               class="group flex items-center gap-3 rounded-2xl p-2.5 transition duration-150 hover:bg-slate-50 hover:shadow-sm border border-transparent hover:border-slate-200/80 {{ request()->routeIs($item['route']) ? 'bg-emerald-50/70 border-emerald-200 text-emerald-900' : 'text-slate-700' }}">
+                                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-200/70 p-1.5 transition duration-200 group-hover:scale-110 group-hover:bg-white group-hover:border-emerald-300 group-hover:shadow-sm">
+                                                    <img src="{{ $item['image'] ?? asset('images/products/digital.png') }}" 
+                                                         alt="{{ $item['label'] }}" 
+                                                         class="h-full w-full object-contain filter drop-shadow-xs">
+                                                </div>
+                                                <div class="min-w-0 flex-1">
+                                                    <p class="truncate text-sm font-bold text-slate-900 group-hover:text-emerald-600 transition">
+                                                        {{ $item['label'] }}
+                                                    </p>
+                                                    @if (!empty($item['sub']))
+                                                        <p class="truncate text-[11px] text-slate-400 group-hover:text-slate-600 transition">
+                                                            {{ $item['sub'] }}
+                                                        </p>
+                                                    @endif
+                                                </div>
+                                                <i class="fa-solid fa-chevron-right text-[10px] text-slate-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 text-emerald-600 transition shrink-0"></i>
+                                            </a>
+                                        @endforeach
+                                    </div>
+
+                                    {{-- Dropdown Quick Footer --}}
+                                    <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between px-2 text-[11px] text-slate-400">
+                                        <span class="flex items-center gap-1.5">
+                                            <i class="fa-solid fa-circle-check text-emerald-500 text-[10px]"></i>
+                                            <span>Clean IPs &bull; 48h Warranty</span>
+                                        </span>
+                                        <a href="{{ route('contact') }}" class="font-semibold text-slate-500 hover:text-emerald-600 transition">Need Custom Batch?</a>
+                                    </div>
+
                                 </div>
                             </div>
                         @endif
@@ -183,10 +281,21 @@
                                         <span>{{ $section['label'] }}</span>
                                         <i class="fa-solid fa-chevron-down text-xs text-slate-400" :class="{ 'rotate-180': expanded }"></i>
                                     </button>
-                                    <div x-show="expanded" x-transition class="space-y-2 px-1 pb-1" style="display: none;">
-                                        <a href="{{ route($section['route']) }}" class="block whitespace-nowrap rounded-xl px-4 py-3 text-sm font-semibold text-black {{ request()->routeIs($section['route']) ? 'bg-sky-50 text-sky-700' : 'bg-white' }}">{{ $section['label'] }} Overview</a>
+                                    <div x-show="expanded" x-transition class="space-y-1.5 px-1 pb-1 pt-2 border-t border-slate-200/70 mt-1" style="display: none;">
+                                        <a href="{{ route($section['route']) }}" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50/70 border border-emerald-200/60 transition">
+                                            <span>All {{ $section['label'] }} Marketplace</span>
+                                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                        </a>
                                         @foreach ($section['items'] as $item)
-                                            <a href="{{ route($item['route']) }}" class="block whitespace-nowrap rounded-xl px-4 py-3 text-sm text-black transition hover:bg-white hover:text-sky-700 {{ request()->routeIs($item['route']) ? 'bg-sky-50 text-sky-700' : '' }}">{{ $item['label'] }}</a>
+                                            <a href="{{ route($item['route']) }}" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-800 transition hover:bg-white hover:text-emerald-700 {{ request()->routeIs($item['route']) ? 'bg-white font-bold text-emerald-700 shadow-xs' : '' }}">
+                                                <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white border border-slate-200/80 p-1">
+                                                    <img src="{{ $item['image'] ?? asset('images/products/digital.png') }}" alt="{{ $item['label'] }}" class="h-full w-full object-contain">
+                                                </div>
+                                                <div class="min-w-0 flex-1">
+                                                    <span class="block truncate font-medium">{{ $item['label'] }}</span>
+                                                </div>
+                                                <i class="fa-solid fa-chevron-right text-[10px] text-slate-300"></i>
+                                            </a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -220,6 +329,7 @@
 
         <main class="mx-auto min-h-[calc(100vh-88px)] max-w-7xl px-4 pb-10 pt-20 sm:px-6 lg:px-8">
             @yield('app-content')
+            {{ $slot ?? '' }}
         </main>
 
         <footer class="border-t border-slate-800 bg-slate-950 text-slate-100">
@@ -228,11 +338,11 @@
                     <a href="{{ route('home') }}" class="flex items-center gap-3">
                         <img class="h-10 w-auto" src="{{ asset('images/logo/logo.png') }}" alt="ITPVA">
                         <span>
-                            <span class="block text-sm font-bold uppercase tracking-[0.35em] text-white">ITPVA</span>
-                            <span class="block text-xs text-slate-400">Account Marketplace</span>
+                            <span class="block text-base font-bold uppercase tracking-[0.35em] text-white">ITPVA</span>
+                            <span class="block text-sm text-slate-300">Account Marketplace</span>
                         </span>
                     </a>
-                    <p class="max-w-md text-sm leading-7 text-slate-400">
+                    <p class="max-w-md text-base leading-7 text-slate-300">
                         Explore verified account categories, responsive product pages, and a clean browsing experience built to help users discover services quickly.
                     </p>
                     <div class="flex items-center gap-3 text-slate-400">

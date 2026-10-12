@@ -1,8 +1,88 @@
-- [x] Update light-theme “Available Services” main center card in resources/views/Pages/home.blade.php
-  - [x] Change inner card background from dark glass to light
-  - [x] Update all card text/icon colors to dark theme
-  - [x] Update service item cards (border/background) to light values
-  - [x] Keep layout/radius/spacing intact
-- [x] Save changes and verify no syntax errors
-
+- [x] Redesign Homepage Hero Section (Modern IT Tech Field Design):
+  - [x] Dark and blurred background image (`images/hero-bg.png`) with layered atmospheric gradient overlays
+  - [x] High-contrast white and emerald gradient typography on dark hero canvas
+  - [x] Smooth floating keyframe animations on ambient orbs, status cards, and floating tech badges
+  - [x] Floating Console Card & Badges styled in dark theme with frosted glassmorphic blur (`backdrop-blur-2xl`, `bg-slate-900/85`, `border-slate-700/80`)
+  - [x] Live System Status indicator: `ITPVA Provisioning Engine v2.4 | STATUS: OPERATIONAL`
+  - [x] High-impact IT headline with gradient text accents & clear value proposition
+  - [x] Interactive IT Live Provisioning Console Card with real-time stock pills, latency indicator, and SLA metrics
+  - [x] CTA buttons: "Explore Product Matrix" (smooth anchor) & "Contact Tech Sales"
+  - [x] Trust spec badges: Non-VoIP carrier, Aged history, Instant dispatch, Replacement SLA
+- [x] Redesign KPI & Platform Ecosystem Strip:
+  - [x] 4 responsive metric cards: 120K+ Accounts, 99.8% Success, <5 Min Dispatch, 24/7 Tech Support
+  - [x] Supported tech stack ticker (Google, AWS, Azure, DigitalOcean, Meta, X, LinkedIn, Reddit)
+- [x] Redesign Product Catalog Matrix (`#products`):
+  - [x] Much larger product brand icons & images (`h-24 w-24 sm:h-28 sm:w-28`) with drop-shadow and hover micro-zoom
+  - [x] Interactive search filter input (`x-model="searchQuery"`) with instant live search
+  - [x] Category filter pills with count badges (All, Email, Voice, Social, Cloud, More)
+  - [x] Modern IT product cards with brand logos, category/stock chips, technical specs checklists, and order links
+  - [x] Friendly empty state with reset filter button
+- [x] Increased typography sizes across the entire homepage and site:
+  - [x] Eliminated micro/tiny text (upgraded all `text-[10px]` and `text-[11px]` to `text-xs` / `text-sm`)
+  - [x] Prominent headlines (`text-4xl` to `text-6xl`), comfortable body paragraphs (`text-base` to `text-xl`)
+  - [x] High-contrast, legible specs, badges, and button labels
+- [x] Customer Testimonial Section in Carousel:
+  - [x] Interactive Alpine.js carousel with autoplay timer (5s) and pause-on-hover
+  - [x] Next / Previous navigation arrow buttons
+  - [x] Pagination indicator dots (active slide pill)
+  - [x] 6 detailed client reviews with 5-star ratings, verified badges, company/role info, and purchased product tags
+- [x] Architecture & Security Standards Section:
+  - [x] 4 enterprise pillars (Real Carrier PVA, Aged History, Clean Residential IPs, SLA Guarantee)
+- [x] Technical FAQ & Enterprise Custom Order CTA Banner
+- [x] 100% Device Responsive & Pure Tailwind CSS in clean light theme
+- [x] Redesign All Product Pages (via shared `pages.partials.catalog-page` powering `/email`, `/google-voice`, `/social-media`, `/more/*`, etc.):
+  - [x] Hero section is dark with high-contrast typography and emerald tech accents
+  - [x] Background image is heavily blurred (`blur-3xl scale-150 opacity-25`) with atmospheric gradient overlays and ambient glowing orbs
+  - [x] Added breadcrumb navigation and verified PVA infrastructure pill badge
+  - [x] Floating IT console preview card (`animate-float-subtle bg-slate-900/85 backdrop-blur-2xl border-slate-700/80`) with product icon spotlight, specification highlights, and live latency
+  - [x] Below contents completely redesigned:
+    - [x] Responsive 3-column KPI stats strip with metric icons and hover lift
+    - [x] Platform ecosystem category subpage cards (`$cards`) with direct subpage linking
+    - [x] 3-tier provisioning packages matrix (`#packages`) with "Most Popular" badge and feature checklists
+    - [x] Architecture & verification standards (physical SIM, clean residential IPs, 2FA keys, 48h SLA)
+    - [x] Interactive FAQ accordion with animated plus/minus icons
+    - [x] Enterprise custom volume & dedicated API CTA banner
+    - [x] 100% device responsive with touch-friendly targets and clean typography
+- [x] Redesign Authentication Experience (`/login` & `/register`):
+  - [x] Shared `layouts.guest` redesigned with dark atmospheric canvas, heavy background blur (`images/hero-bg.png`), ambient glow orbs, and top utility bar ("Back to ITPVA Marketplace" & SSL security indicator)
+  - [x] Split glassmorphic card container (`bg-slate-900/85 backdrop-blur-2xl border-slate-700/80 ring-1 ring-white/10`)
+  - [x] Left Aside IT tech showcase with official logo, live operational indicator (`v2.4 OPERATIONAL`), dynamic context badges, and enterprise security guarantee
+  - [x] Redesigned Login Page (`/login`):
+    - [x] High-contrast inputs with clean slate-950/80 backgrounds, emerald focus rings, and icon indicators
+    - [x] Interactive password visibility toggle (Alpine.js eye/eye-slash)
+    - [x] Styled "Remember this session" checkbox & "Forgot password?" link
+    - [x] Emerald CTA button with subtle glow & direct "Create New Account" switch
+  - [x] Redesigned Register Page (`/register`):
+    - [x] Side-by-side grid layout for Full Name & Email, Password & Confirm Password
+    - [x] Password visibility toggles on both password inputs
+    - [x] Security info alert highlighting 2FA recovery & delivery warranty
+    - [x] Direct "Sign in to your account" switch
+  - [x] 100% device responsive across mobile, tablet, and desktop screens
+- [x] Redesign Contact Page (`/contact`):
+  - [x] Dark hero with heavy background blur (`blur-3xl scale-150 opacity-25`), floating dispatch desk card, and live `< 15m` response indicator
+  - [x] 3 direct communication channel cards (Email Support, 24/7 Hours & Rotation, Catalog Discovery)
+  - [x] Interactive inquiry and batch quote form with Alpine.js instant submission feedback
+  - [x] Order preparation checklist and 48-hour SLA replacement guarantee box
+- [x] Redesign About Us Page (`/about-us`):
+  - [x] Dark hero with heavy background blur, network telemetry terminal, and 4 trust specs
+  - [x] 4 KPI metric cards (120K+ Accounts, 99.9% SLA, 45+ Geos, 24/7 Support)
+  - [x] 4-stage provisioning and verification pipeline (Physical SIM, Residential IPs, 2FA Tenuring, Encrypted Dispatch)
+  - [x] 4 core engineering commitments (Zero Synthetic VoIP, Developer Formats, 48h Replacement, Custom Volume)
+  - [x] Enterprise upgrade CTA banner
+- [x] Products Inventory Audit & Luckron Catalog Integration (`https://luckron.com/`):
+  - [x] Scraped and audited live product catalog from Luckron Shop (`https://luckron.com/` and `https://luckron.com/products.php`)
+  - [x] Reconciled all 17 Luckron products against existing ITPVA inventory
+  - [x] Created 9 missing dedicated product pages with dark blurred heroes, package matrices, and FAQs:
+    - [x] Nextdoor Accounts (`/more/nextdoor` -> `more.nextdoor`)
+    - [x] Edu Mail Accounts (`/email/edumail` -> `email.edumail`)
+    - [x] Old Code Mail Accounts (`/email/code-mail` -> `email.code-mail`)
+    - [x] GMX Mail Accounts (`/email/gmx` -> `email.gmx`)
+    - [x] Mail.com Accounts (`/email/mail-com` -> `email.mail-com`)
+    - [x] TikTok Ads Accounts (`/social-media/tiktok-accounts` -> `social-media.tiktok-accounts`)
+    - [x] Hotmail & Outlook OAuth2 (`/email/hotmail-oauth2` -> `email.hotmail-oauth2`)
+    - [x] Gmail Domain Rent (`/email/gmail-domain-rent` -> `email.gmail-domain-rent`)
+    - [x] Instagram Clone & Aged PVA (`/social-media/instagram-clone` -> `social-media.instagram-clone`)
+  - [x] Added all 9 products to the homepage catalog matrix (`#products`) with search filtering and spec checklists
+  - [x] Added all 9 product links to header navigation dropdowns and mobile drawer in `layouts/app.blade.php`
+  - [x] Tested and verified HTTP 200 responses across all newly created endpoints
 

@@ -136,6 +136,51 @@ class HomeController extends Controller
         return view('pages.products.product-hunt');
     }
 
+    public function nextdoor()
+    {
+        return view('pages.products.nextdoor');
+    }
+
+    public function edumail()
+    {
+        return view('pages.products.edumail');
+    }
+
+    public function codeMail()
+    {
+        return view('pages.products.code-mail');
+    }
+
+    public function gmx()
+    {
+        return view('pages.products.gmx');
+    }
+
+    public function mailCom()
+    {
+        return view('pages.products.mail-com');
+    }
+
+    public function hotmailOauth2()
+    {
+        return view('pages.products.hotmail-oauth2');
+    }
+
+    public function gmailDomainRent()
+    {
+        return view('pages.products.gmail-domain-rent');
+    }
+
+    public function tiktokAccounts()
+    {
+        return view('pages.products.tiktok-accounts');
+    }
+
+    public function instagramClone()
+    {
+        return view('pages.products.instagram-clone');
+    }
+
     public function aboutUs()
     {
         return view('pages.products.about-us');

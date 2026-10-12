@@ -1,26 +1,28 @@
 @extends('layouts.app')
 
-@section('title', 'Gmail')
+@section('title', 'Gmail Accounts - Verified Inboxes & Workspace Infrastructure')
 
 @section('app-content')
     @include('pages.partials.catalog-page', [
         'eyebrow' => 'Gmail Accounts',
-        'title' => 'Promote Gmail inventory with a modern product page that feels trustworthy and direct.',
-        'description' => 'This page is ready for Gmail account details, package breakdowns, account quality notes, and support information using the new shared Tailwind layout.',
+        'title' => 'Gmail Accounts & Google Workspace Infrastructure',
+        'description' => 'Explore our complete catalog of verified Gmail accounts, aged vintage inboxes, and Google Workspace setups. Built with real carrier phone verifications, 2FA backup codes, and pristine residential IPs for enterprise cold emailing and daily operations.',
         'highlights' => [
-            ['title' => 'Standalone destination', 'text' => 'Gmail now has its own route for organic traffic or direct campaign linking.'],
-            ['title' => 'Conversion-ready structure', 'text' => 'The hero, cards, and stats blocks can be swapped for pricing and trust signals.'],
-            ['title' => 'Consistent branding', 'text' => 'The page inherits the same design language as the rest of the catalog.'],
+            'Fresh & Aged Vintage Selection: Choose newly verified PVA or mature accounts aged up to 10+ years (2014-2023).',
+            'Full Protocol Accessibility: Enabled for webmail, IMAP, and SMTP with app passwords for instant mailer integration.',
+            'Real Carrier Verification: Verified with physical mobile carrier numbers — zero synthetic VoIP flags.',
+            'Guaranteed Dispatch & Warranty: Instant automated delivery backed by our 48-hour replacement guarantee.'
         ],
         'stats' => [
-            ['value' => '24/7', 'label' => 'Showcase Support', 'text' => 'Replace this with your support or delivery promise when ready.'],
-            ['value' => 'Bulk', 'label' => 'Order Friendly', 'text' => 'Use the page to talk about volume orders and fulfillment options.'],
-            ['value' => 'Secure', 'label' => 'Trust Layer', 'text' => 'Add your verification and replacement policy details here.'],
+            ['label' => 'Account Types', 'value' => 'Fresh & Vintage Aged'],
+            ['label' => 'Deliverability Score', 'value' => '99.5% Inbox Placement'],
+            ['label' => 'Delivery Format', 'value' => 'CSV / JSON / Netscape'],
+            ['label' => 'Support Hours', 'value' => '24/7 Dedicated'],
         ],
         'cards' => [
-            ['icon' => 'fa-solid fa-envelope-circle-check', 'title' => 'Verified Messaging', 'text' => 'Present inbox access quality and account readiness.'],
-            ['icon' => 'fa-solid fa-shield-halved', 'title' => 'Policy Notes', 'text' => 'Clarify handling, warranty, or replacement terms.'],
-            ['icon' => 'fa-solid fa-bolt', 'title' => 'Quick Delivery', 'text' => 'Add turnaround time expectations for customers.'],
+            ['icon' => 'fa-solid fa-envelope', 'title' => 'Buy Gmail Accounts', 'text' => 'Fresh phone-verified accounts with recovery mail access and 2FA codes for mass signups and active outreach.'],
+            ['icon' => 'fa-solid fa-clock-rotate-left', 'title' => 'Buy Gmail Aged Accounts', 'text' => 'Vintage inboxes aged from 2014 to 2023 with established domain trust and high sender reputation.'],
+            ['icon' => 'fa-solid fa-globe', 'title' => 'Gmail Domain Rent', 'text' => 'Temporary private domain rental (2h to 48h) for instant OTP code reception and app activations.'],
         ],
     ])
 @endsection
