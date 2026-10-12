@@ -6,8 +6,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'ITPVA') }} - {{ request()->routeIs('register') ? 'Create Account' : 'Sign In' }}</title>
-        <link rel="icon" type="image/x-icon" href="/small-logo.png">
-        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('small-logo.png') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
         <!-- Fonts & Icons -->
         <link rel="preconnect" href="https://fonts.bunny.net">

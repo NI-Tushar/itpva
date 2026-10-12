@@ -7,10 +7,10 @@
     <title>@yield('title', 'ITPVA')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="/small-logo.png">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="manifest" href="site.webmanifest">
     <meta name="keywords" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('small-logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <script src="https://kit.fontawesome.com/9f57283aa3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
